@@ -1,7 +1,7 @@
 function getValue(){
 var requestURL = 'http://api.open-notify.org/iss-now.json';
 var request = new XMLHttpRequest();
-    request.open('GET', requestURL);
+    request.open('GET', requestURL, true);
     request.responseType = 'json';
     request.send();
 
@@ -51,3 +51,6 @@ var request = new XMLHttpRequest();
 	$.getJSON('http://api.open-notify.org/astros.json', function(astro) {
 	    console.log(astro);
 	});
+
+
+    

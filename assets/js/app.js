@@ -20,6 +20,20 @@ $(function() {
             function (position) {
                 var marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
                 marker.bindPopup("Ma position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();
+                
+
+                var requestURL = 'http://api.open-notify.org/iss-pass.json?lat='+ position.coords.latitude +'&lon='+ position.coords.longitude;
+                var request = new XMLHttpRequest();
+                    request.open('GET', requestURL, true);
+                    request.responseType = 'json';
+                    request.send();
+
+                    request.onload = function(data) {
+                        data['response'].forEach(function (d) {
+                            var date = new Date(d['risetime']*1000);
+                            console.log(date)
+                        });
+                    }
             }, 
             function(error) {
                 console.log(error);
@@ -29,5 +43,3 @@ $(function() {
         }
     });
 })
-
-
