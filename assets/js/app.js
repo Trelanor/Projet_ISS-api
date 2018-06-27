@@ -14,11 +14,16 @@ L.tileLayer('https://api.mapbox.com/styles/v1/trelanor/cjivfv7xf4txn2qs4t8kaj9nb
 
 $(function() {
     $('#myLocation').click(function (e) {
+        console.log(navigator.geolocation);
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition((function (position) {
+            navigator.geolocation.getCurrentPosition(
+            function (position) {
                 var marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
                 marker.bindPopup("Ma position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();
-            }));
+            }, 
+            function(error) {
+                console.log(error);
+            }, {timeout:5000});
         } else {
             alert("La géolocalisation n'est pas supportée par ce navigateur.");
         }
