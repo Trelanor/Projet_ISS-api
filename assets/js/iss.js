@@ -1,5 +1,3 @@
-
-
 function getValue(){
 var requestURL = 'http://api.open-notify.org/iss-now.json';
 var request = new XMLHttpRequest();
@@ -26,4 +24,7 @@ var request = new XMLHttpRequest();
     }
 };
     window.setInterval("getValue()", "5000", );
-    
+
+	$.getJSON('http://api.open-notify.org/astros.json', function(astro) {
+	    console.log(astro);
+	});
