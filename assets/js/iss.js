@@ -12,7 +12,7 @@ var request = new XMLHttpRequest();
 
     function ISS_position(jsonObj) {
         console.log(jsonObj['latitude']);
-        console.log(jsonObj['longitude']); 
+        console.log(jsonObj['longitude']);
 
     var test = L.marker([jsonObj['latitude'],jsonObj['longitude']], {draggable: true}).addTo(map);
     test.bindPopup("ISS Position :<br> Latitude : " + jsonObj['latitude'] + ',<br>Longitude ' + jsonObj['longitude']).openPopup();

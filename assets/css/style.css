@@ -12,19 +12,17 @@ a {
 }
 
 #map {
-    position: absolute;
-    left: 50%;
-    top: 30%;
-    transform: translate(-50%, -30%);
-    width: 80%;
-    height: 60%;
+    position: fixed;
+    width: 75%;
+    height: 100%;
     min-height: 40%;
+    z-index: 0;
 }
 
 .mylocation {
     position: absolute;
     bottom: 10%;
-    left: 50%;
+    left: 40%;
     transform: translate(-50%, 10%);
     -webkit-border-radius: 7;
     -moz-border-radius: 7;
@@ -36,6 +34,7 @@ a {
     padding: 10px 20px 10px 20px;
     border: solid #1f628d 2px;
     text-decoration: none;
+    z-index: 10;
 }
 
 .mylocation:hover {
@@ -43,4 +42,5 @@ a {
     text-decoration: none;
     color: #ffffff;
     border: none;
+    z-index: 10;
 }
