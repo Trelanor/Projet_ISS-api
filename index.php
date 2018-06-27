@@ -18,22 +18,19 @@
 		
 		
 		<body>
-			 <div id="map"></div>
+		<header></header>
+			<div id="map"></div>
 
-             <div>
-            <button id="myLocation" class="mylocation">Ma position</button>
+            <div>
+            	<button id="myLocation" class="mylocation">Ma position</button>
             </div>
 
             
-			 
 			
-			<script
-			  src="https://code.jquery.com/jquery-3.3.1.min.js"
-			  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-			  crossorigin="anonymous"></script>
-			<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js"
-				integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
-				crossorigin=""></script>
+			
+			<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+			<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
 			<script src="assets/js/app.js"></script>
+			<script src="assets/js/iss.js"></script>
 		</body>
 	</html>
