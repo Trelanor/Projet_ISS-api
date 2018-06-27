@@ -1,17 +1,6 @@
-// geolocalisation
 
-function currentLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition((function (position) {
-            var marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
-            marker.bindPopup("Ma position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();
-        }));
-    } else {
-        alert("La géolocalisation n'est pas supportée par ce navigateur.");
-    }
-}
 
-// definir point de depart et choix de carte via leaflet
+// definir point de depart ouverture page et choix de carte via leaflet
 var map = L.map('map', {
     center: ['37.629562', '-116.849556'],
     zoom: 16
@@ -23,7 +12,20 @@ L.tileLayer('https://api.mapbox.com/styles/v1/trelanor/cjivfv7xf4txn2qs4t8kaj9nb
    minZoom: 2,
 }).addTo(map);
 
-$('#myLocation').click(function (e) {
-    currentLocation();
-});
+$(function() {
+    $('#myLocation').click(function (e) {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition((function (position) {
+                var marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
+                marker.bindPopup("Ma position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();
+            }));
+        } else {
+            alert("La géolocalisation n'est pas supportée par ce navigateur.");
+        }
+    });
+})
+
+
+
+
 
