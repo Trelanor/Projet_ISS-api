@@ -15,7 +15,7 @@ var request = new XMLHttpRequest();
 
     function functionPosition(jsonObj) {
         console.log(jsonObj['latitude']);
-        console.log(jsonObj['longitude']); 
+        console.log(jsonObj['longitude']);
 
         var ISSicon = L.icon({
             iconUrl: 'assets/img/ISS-sm.png',
@@ -48,7 +48,13 @@ var request = new XMLHttpRequest();
 };
     window.setInterval("getValue()", "5000", );
 
-	$.getJSON('http://api.open-notify.org/astros.json', function(astro) {
+	
+    
+    
+    
+    
+    
+    $.getJSON('http://api.open-notify.org/astros.json', function(astro) {
 	    console.log(astro);
 	});
 
