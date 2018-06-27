@@ -44,3 +44,11 @@ a {
     color: #ffffff;
     border: none;
 }
+
+#info {
+    padding: 5px;
+    width: 100%;
+    height: 20px;
+    font-family: monospace;
+}
+
