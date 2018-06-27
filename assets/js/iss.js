@@ -48,6 +48,12 @@ var request = new XMLHttpRequest();
 };
     window.setInterval("getValue()", "5000", );
 
-	$.getJSON('http://api.open-notify.org/astros.json', function(astro) {
+	
+    
+    
+    
+    
+    
+    $.getJSON('http://api.open-notify.org/astros.json', function(astro) {
 	    console.log(astro);
 	});

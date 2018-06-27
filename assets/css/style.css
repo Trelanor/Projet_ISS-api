@@ -13,7 +13,7 @@ a {
 
 #map {
     position: fixed;
-    width: 75%;
+    width: 65%;
     height: 100%;
     min-height: 40%;
     z-index: 0;
@@ -22,7 +22,7 @@ a {
 .mylocation {
     position: absolute;
     bottom: 10%;
-    left: 40%;
+    left: 30%;
     transform: translate(-50%, 10%);
     -webkit-border-radius: 7;
     -moz-border-radius: 7;
@@ -43,4 +43,10 @@ a {
     color: #ffffff;
     border: none;
     z-index: 10;
+}
+
+#stream{
+    right: 0px;
+    z-index: 10;
+    position: absolute;
 }
