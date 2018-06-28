@@ -2,7 +2,7 @@
 // definir point de depart ouverture page et choix de carte via leaflet
 var map = L.map('map', {
     center: ['10', '10'],
-    zoom: 4
+    zoom: 3
 });
 
 L.tileLayer('https://api.mapbox.com/styles/v1/trelanor/cjivfv7xf4txn2qs4t8kaj9nb/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidHJlbGFub3IiLCJhIjoiY2ppdmVkd3QwMWFraTNxbXZleWV0ejF6cyJ9.RrESCs90t5bLD25_aI-DWA', {
@@ -25,7 +25,8 @@ function Risetime(coords) {
     request.onload = function() {    
         $.each(request.response.response, function(key, element) {
             var date = new Date(element['risetime']*1000);
-            console.warn(date.toString());
+            
+            $("#risetime").append('<li>'+ date.toString() +'</li>');
         })
     }    
 }
