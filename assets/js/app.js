@@ -1,5 +1,4 @@
 
-
 // definir point de depart ouverture page et choix de carte via leaflet
 var map = L.map('map', {
     center: ['10', '10'],
@@ -12,32 +11,40 @@ L.tileLayer('https://api.mapbox.com/styles/v1/trelanor/cjivfv7xf4txn2qs4t8kaj9nb
     minZoom: 2,
 }).addTo(map);
 
+var myMarker = null;
+
+function Risetime(coords) {
+
+    var requestURL = 'api.php?lat='+ coords.latitude +'&lon='+ coords.longitude ;
+    var request = new XMLHttpRequest();
+    
+    request.open('GET', requestURL, true);
+    request.responseType = 'json';
+    request.send();
+    
+    request.onload = function() {    
+        $.each(request.response.response, function(key, element) {
+            var date = new Date(element['risetime']*1000);
+            console.warn(date.toString());
+        })
+    }    
+}
+
+
+
+
 $(function() {
     $('#myLocation').click(function () {
-        console.log(navigator.geolocation);
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
             function (position) {
 
-                var geoLatitude = position.coords.latitude;
-                var geoLongitude = position.coords.longitude;
-
-                var marker = L.marker([geoLatitude, geoLongitude]).addTo(map);
-                marker.bindPopup("Ma position :<br> Latitude : " + geoLatitude + ',<br>Longitude ' + geoLongitude).openPopup();
+                var myMarker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
+                myMarker.bindPopup("Ma position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();                
+                
+                Risetime(position.coords);
                 
 
-                var requestURL = 'http://api.open-notify.org/iss-pass.json?lat='+ geoLatitude +'&lon='+ geoLongitude;
-                var request = new XMLHttpRequest();
-                    request.open('GET', requestURL, true);
-                    request.responseType = 'json';
-                    request.send();
-
-                    request.onload = function(data) {
-                        data['response'].forEach(function (d) {
-                            var date = new Date(d['risetime']*1000);
-                            console.log(date)
-                        });
-                    }
             }, 
             function(error) {
                 console.log(error);

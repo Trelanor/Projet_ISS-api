@@ -49,14 +49,22 @@ var request = new XMLHttpRequest();
     window.setInterval("getValue()", "5000", );
 
 	
+    function astro() {
+        var requestURL = 'http://api.open-notify.org/astros.json';
+        var request = new XMLHttpRequest();
+        
+        request.open('GET', requestURL);
+        request.responseType = 'json';
+        request.send();
+        
+        request.onload = function() {    
+            //var ISS_Astro = request.response.people.name;
+            $("#astro").empty();
+            $.each(request.response.people, function(key, element) {
+                $("#astro").append('<p>'+ element.name +'</p>');
+                //console.log(element);
+            })
+        }    
+    }
     
-    
-    
-    
-    
-    $.getJSON('http://api.open-notify.org/astros.json', function(astro) {
-	    console.log(astro);
-	});
-
-
-    
+    astro();
