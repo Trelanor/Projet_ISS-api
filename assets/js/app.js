@@ -2,7 +2,7 @@
 // definir point de depart ouverture page et choix de carte via leaflet
 var map = L.map('map', {
     center: ['10', '10'],
-    zoom: 4
+    zoom: 3
 });
 
 L.tileLayer('https://api.mapbox.com/styles/v1/trelanor/cjivfv7xf4txn2qs4t8kaj9nb/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidHJlbGFub3IiLCJhIjoiY2ppdmVkd3QwMWFraTNxbXZleWV0ejF6cyJ9.RrESCs90t5bLD25_aI-DWA', {
@@ -14,7 +14,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/trelanor/cjivfv7xf4txn2qs4t8kaj9nb
 var myMarker = null;
 
 $(function() {
-    $('#myLocation').click(function (e) {
+    $('#myLocation').click(function () {
         console.log(navigator.geolocation);
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(

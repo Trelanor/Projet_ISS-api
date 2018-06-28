@@ -52,3 +52,14 @@ iframe{
     width: 35%;
     height: 40%;
 }
+
+.présentation{
+    position: absolute;
+    right: 5%;
+    bottom: 20%;
+}
+
+#astro{
+    right: 0;
+    bottom: 0;
+}
