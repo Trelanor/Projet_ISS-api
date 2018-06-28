@@ -20,7 +20,6 @@ function getValue(){
     
         var ISSicon = L.icon({
             iconUrl: 'assets/img/ISS-sm.png',
-        
             iconSize:     [40, 40], // size of the icon
             popupAnchor:  [-3, -26] // point from which the popup should open relative to the iconAnchor
         });
@@ -53,7 +52,7 @@ window.setInterval("getValue()", "5000" );
 function astro() {
     var requestURL = 'http://api.open-notify.org/astros.json';
     var request = new XMLHttpRequest();
-       
+
     request.open('GET', requestURL);
     request.responseType = 'json';
     request.send();
@@ -71,3 +70,8 @@ function astro() {
 astro();
 
 window.setInterval("astro()", (1000 * 60 * 10) );
+
+    //data['people'].forEach(function functionAstro(jsonObj) {
+    //        
+    //    }  ) 
+

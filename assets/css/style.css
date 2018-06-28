@@ -63,3 +63,12 @@ iframe{
     right: 0;
     bottom: 0;
 }
+
+.risetimeBox{
+    position: absolute;
+    background: rgba(131, 131, 131, 0.501);
+    left: 0;
+    bottom: 0;
+    color: white;
+    padding: 20px;
+}
