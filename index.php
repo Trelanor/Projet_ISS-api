@@ -26,7 +26,7 @@
             </div>
 			
             <div id="stream">
-				<iframe width="675" height="420" src="https://www.youtube.com/embed/4993sBLAzGA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				<iframe src="https://www.youtube.com/embed/4993sBLAzGA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 			</div>
 			
 			<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

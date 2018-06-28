@@ -1,5 +1,4 @@
 
-
 // definir point de depart ouverture page et choix de carte via leaflet
 var map = L.map('map', {
     center: ['10', '10'],
@@ -12,14 +11,16 @@ L.tileLayer('https://api.mapbox.com/styles/v1/trelanor/cjivfv7xf4txn2qs4t8kaj9nb
    minZoom: 2,
 }).addTo(map);
 
+var myMarker = null;
+
 $(function() {
     $('#myLocation').click(function (e) {
         console.log(navigator.geolocation);
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
             function (position) {
-                var marker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
-                marker.bindPopup("Ma position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();
+               myMarker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
+                myMarker.bindPopup("Ma position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();
             }, 
             function(error) {
                 console.log(error);
