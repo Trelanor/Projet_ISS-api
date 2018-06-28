@@ -19,16 +19,15 @@
 		
 		<body>
 		<header></header>
-		
 			<div id="map"></div>
 			
             <div>
             	<button id="myLocation" class="mylocation">Ma position</button>
             </div>
 			
-            <!-- <div id="stream">
-				<iframe width="675" height="420" src="https://www.youtube.com/embed/4993sBLAzGA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			</div> -->
+            <div id="stream">
+				<iframe src="https://www.youtube.com/embed/4993sBLAzGA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			</div>
 			
 			<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 			<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>

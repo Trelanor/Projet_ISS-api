@@ -45,8 +45,10 @@ a {
     z-index: 10;
 }
 
-#stream{
+iframe{
     right: 0px;
     z-index: 10;
     position: absolute;
+    width: 35%;
+    height: 40%;
 }
