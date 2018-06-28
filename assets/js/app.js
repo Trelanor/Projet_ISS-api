@@ -1,5 +1,6 @@
 
 // definir point de depart ouverture page et choix de carte via leaflet
+
 var map = L.map('map', {
     center: ['10', '10'],
     zoom: 4
@@ -12,7 +13,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/trelanor/cjivfv7xf4txn2qs4t8kaj9nb
 }).addTo(map);
 
 var myMarker = null;
-
+// var myLocation = document.getElementById('myLocation').value;
 $(function() {
     $('#myLocation').click(function (e) {
         console.log(navigator.geolocation);
@@ -28,13 +29,7 @@ $(function() {
         } else {
             alert("La géolocalisation n'est pas supportée par ce navigateur.");
         }
-        function getPoints($adresse) {
-            $api = simplexml_load_file("http://maps.googleapis.com/maps/api/geocode/xml?address=" . urlencode($adresse)."&sensor=true");
-                    if ($api=> status == "OK")
-                        return $api=>result=>geometry=>location=>lat . ',' . $api=>result=>geometry=>location=>lng;
-                    else {'false'}
-                        
-                }
+
     });
     
 })

@@ -19,6 +19,7 @@
 		
 		<body>
 		<header></header>
+		
 			<div id="map"></div>
 			
             <div>
@@ -33,5 +34,7 @@
 			<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
 			<script src="assets/js/app.js"></script>
 			<script src="assets/js/iss.js"></script>
+			<script src="assets/js/kils.js"></script>
+
 		</body>
 	</html>
