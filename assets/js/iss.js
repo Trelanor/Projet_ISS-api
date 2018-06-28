@@ -71,6 +71,3 @@ function astro() {
 astro();
 
 window.setInterval("astro()", (1000 * 60 * 10) );
-    //data['people'].forEach(function functionAstro(jsonObj) {
-    //        
-    //    }  ) 
