@@ -19,53 +19,46 @@ L.tileLayer('https://api.mapbox.com/styles/v1/trelanor/cjivfv7xf4txn2qs4t8kaj9nb
 
 var myMarker = null;
 
-function Risetime(coords) {
+function once(fn, context) { 
+	var result;
 
-    var requestURL = 'api.php?lat='+ coords.latitude +'&lon='+ coords.longitude ;
-    var request = new XMLHttpRequest();
-    
-    request.open('GET', requestURL, true);
-    request.responseType = 'json';
-    request.send();
-    
-    request.onload = function() {    
-        $.each(request.response.response, function(key, element) {
-            var date = new Date(element['risetime']*1000);
-            
-            $("#risetime").append('<li>'+ date.toString() +'</li>');
+	return function() { 
+		if(fn) {
+			result = fn.apply(context || this, arguments);
+			fn = null;
+		}
 
-        })
-    } 
+		return result;
+    };
 }
 
-$(function() {
-    $('#myLocation').click(function () {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(
-            function (position) {
 
-                myMarker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
-                myMarker.bindPopup("Ma position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();                
+var CanUseOnlyOneTime = once(function Risetime(coords) {
+
+        var requestURL = 'api.php?lat='+ coords.latitude +'&lon='+ coords.longitude ;
+        var request = new XMLHttpRequest();
+        
+        request.open('GET', requestURL, true);
+        request.responseType = 'json';
+        request.send();
+        
+        request.onload = function() { 
+            $("#risetime").append('<h2>When ISS pass above you :</h2>');   
+            $.each(request.response.response, function(key, element) {
+                var date = new Date(element['risetime']*1000);
                 
-                Risetime(position.coords);
-                distance(position.coords);
+                $("#risetime").append('<li>'+ date.toString() +'</li>');
+            })
+        }    
+    }
+);
 
-            }, 
-            function(error) {
-                console.log(error);
-            }, {timeout:5000});
-        } else {
-            alert("La géolocalisation n'est pas supportée par ce navigateur.");
-        }
+console.log('Fired!');
 
-    });
-    
-})
-
-function distance(coords){
+var CanUseOnlyOneTime_Second = once(function distance(coords){
     var requestURL = 'http://api.open-notify.org/iss-now.json';
     var request = new XMLHttpRequest();
-   
+    
     request.open('GET', requestURL);
     request.responseType = 'json';
     request.send();
@@ -81,7 +74,7 @@ function distance(coords){
         }
         
     }
-}
+});
 
 function itineraire(latitude, longitude, lat_b_degre, lon_b_degre){
         
@@ -94,8 +87,33 @@ function itineraire(latitude, longitude, lat_b_degre, lon_b_degre){
     
     d = R * (Math.PI/2 - Math.asin( Math.sin(lat_b) * Math.sin(lat_a) + Math.cos(lon_b - lon_a) * Math.cos(lat_b) * Math.cos(lat_a)))
     // return d;
-    
-    d = Math.sqrt((d * d)+(400 * 400));
-    
-    alert(d)
+    // alert(d)
+    $("#risetime").append('<p>'+'The distance between you and the ISS = ' + d + ' kms</p>');
 }
+
+$(function() {
+    $('#myLocation').click(function () {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+            function (position) {
+                
+                myMarker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
+                myMarker.bindPopup("My position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();                
+                
+
+                
+                CanUseOnlyOneTime(position.coords); // Launch function RiseTime with just 1 time.
+                CanUseOnlyOneTime_Second(position.coords);
+
+            }, 
+            function(error) {
+                console.log(error);
+            }, {timeout:5000});
+        } else {
+            alert("La géolocalisation n'est pas supportée par ce navigateur.");
+        }
+
+    });
+    
+})
+
