@@ -27,7 +27,7 @@
 			</div>
 			
 			<div class="risetimeBox">
-			<h2>When ISS pass above you:</h1>
+			<!-- <h2>When ISS pass above you:</h1> -->
 			<div id="risetime"></div>
 			</div>
 

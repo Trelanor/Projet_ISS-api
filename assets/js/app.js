@@ -28,6 +28,7 @@ function Risetime(coords) {
     request.send();
     
     request.onload = function() {    
+        $("#risetime").append('<h2>When ISS pass above you :</h2>');
         $.each(request.response.response, function(key, element) {
             var date = new Date(element['risetime']*1000);
             
@@ -41,7 +42,7 @@ $(function() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
             function (position) {
-
+                
                 myMarker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
                 myMarker.bindPopup("Ma position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();                
                 
@@ -92,5 +93,6 @@ function itineraire(latitude, longitude, lat_b_degre, lon_b_degre){
     
     d = R * (Math.PI/2 - Math.asin( Math.sin(lat_b) * Math.sin(lat_a) + Math.cos(lon_b - lon_a) * Math.cos(lat_b) * Math.cos(lat_a)))
     // return d;
-    alert(d)
+    // alert(d)
+    $("#risetime").append('<p>'+'The distance between you and the ISS = ' + d + ' kms</p>');
 }
