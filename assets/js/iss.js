@@ -62,7 +62,7 @@ function astro() {
         //var ISS_Astro = request.response.people.name;
         $("#astro").empty();
         $.each(request.response.people, function(key, element) {
-            $("#astro").append('<li>'+ element.name +'</li>');
+            $("#astro").append('<b>'+ element.name +'</b>, ');
             //console.log(element);
         })
     }    
