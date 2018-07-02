@@ -92,3 +92,21 @@ h1{
 p{
     font-size: 1vw;
 }
+
+@media (max-width:990px){
+    #stream{
+        display: none;
+    }
+
+    p{
+        font-size: 1rem;
+    }
+
+    h1{
+        font-size: 1.5rem;
+    }
+
+    #astro{
+        font-size: 1rem;
+    }
+}
