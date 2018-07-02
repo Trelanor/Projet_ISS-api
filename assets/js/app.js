@@ -97,7 +97,7 @@ $(function() {
             function (position) {
                 
                 myMarker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
-                myMarker.bindPopup("Ma position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();                
+                myMarker.bindPopup("My position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();                
                 
 
                 
