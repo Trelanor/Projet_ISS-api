@@ -18,23 +18,42 @@ L.tileLayer('https://api.mapbox.com/styles/v1/trelanor/cjivfv7xf4txn2qs4t8kaj9nb
 
 var myMarker = null;
 
-function Risetime(coords) {
 
-    var requestURL = 'api.php?lat='+ coords.latitude +'&lon='+ coords.longitude ;
-    var request = new XMLHttpRequest();
-    
-    request.open('GET', requestURL, true);
-    request.responseType = 'json';
-    request.send();
-    
-    request.onload = function() {    
-        $.each(request.response.response, function(key, element) {
-            var date = new Date(element['risetime']*1000);
-            
-            $("#risetime").append('<li>'+ date.toString() +'</li>');
-        })
-    }    
+
+function once(fn, context) { 
+	var result;
+
+	return function() { 
+		if(fn) {
+			result = fn.apply(context || this, arguments);
+			fn = null;
+		}
+
+		return result;
+    };
 }
+
+
+var CanUseOnlyOneTime = once(function Risetime(coords) {
+
+        var requestURL = 'api.php?lat='+ coords.latitude +'&lon='+ coords.longitude ;
+        var request = new XMLHttpRequest();
+        
+        request.open('GET', requestURL, true);
+        request.responseType = 'json';
+        request.send();
+        
+        request.onload = function() {    
+            $.each(request.response.response, function(key, element) {
+                var date = new Date(element['risetime']*1000);
+                
+                $("#risetime").append('<li>'+ date.toString() +'</li>');
+            })
+        }    
+    }
+);
+
+console.log('Fired!');
 
 $(function() {
     $('#myLocation').click(function () {
@@ -45,7 +64,9 @@ $(function() {
                 myMarker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
                 myMarker.bindPopup("Ma position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();                
                 
-                Risetime(position.coords);
+
+                
+                CanUseOnlyOneTime(position.coords); // Launch function RiseTime with just 1 time.
                 distance(position.coords);
 
             }, 
@@ -63,7 +84,7 @@ $(function() {
 function distance(coords){
     var requestURL = 'http://api.open-notify.org/iss-now.json';
     var request = new XMLHttpRequest();
-   
+    
     request.open('GET', requestURL);
     request.responseType = 'json';
     request.send();
