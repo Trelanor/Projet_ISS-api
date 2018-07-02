@@ -23,7 +23,7 @@
 			<div id="map"></div>
 			
             <div>
-            	<button id="myLocation" class="mylocation">Ma position</button>
+            	<button id="myLocation" class="mylocation">My position</button>
 			</div>
 			
 			<div class="risetimeBox">
