@@ -31,17 +31,17 @@ a {
 
 .mylocation {
     position: absolute;
-    bottom: -10%;
-    left: 20%;
+    width: 15%;
+    bottom: 5%;
+    left: 50%;
     transform: translate(-50%, 10%);
     -webkit-border-radius: 7;
     -moz-border-radius: 7;
     border-radius: 7px;
-    font-family: Arial;
+    font-family: SpaceAge;
     color: #1f628d;
-    font-size: 30px;
+    font-size: 1.5vw;
     background: #ffffff;
-    padding: 10px 20px 10px 20px;
     border: solid #1f628d 2px;
     text-decoration: none;
     z-index: 10;
@@ -108,5 +108,9 @@ p{
 
     #astro{
         font-size: 1rem;
+    }
+
+    .mylocation{
+        font-size: 2vw;
     }
 }

@@ -24,10 +24,6 @@
 				<div class="boxMap col-lg-8 col-md-12">
 
 					<div id="map"></div>
-
-					<div>
-						<button id="myLocation" class="mylocation">My position</button>
-					</div>
 					
 					<div class="risetimeBox">
 						<div id="risetime"></div>
@@ -45,8 +41,13 @@
 						The ISS is permanent occupied by minimum 3 astronauts. At this moment,</p>
 						<div id="astro"></div>
 						<p>live in the space station.</p>
-					</div>
+					</div>					
 				</div>
+
+				<div>
+					<button id="myLocation" class="mylocation">My position</button>
+				</div>
+				
 			</div>
 
 			<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

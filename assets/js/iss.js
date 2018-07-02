@@ -1,4 +1,3 @@
-
 function getValue(){
     var requestURL = 'http://api.open-notify.org/iss-now.json';
     var request = new XMLHttpRequest();
@@ -71,8 +70,4 @@ function astro() {
 astro();
 
 window.setInterval("astro()", (1000 * 60 * 10) );
-
-    //data['people'].forEach(function functionAstro(jsonObj) {
-    //        
-    //    }  ) 
 
