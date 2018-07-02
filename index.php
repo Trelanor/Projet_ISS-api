@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 	<html lang="fr">
 		<head>
@@ -18,43 +19,35 @@
 		
 		
 		<body>
-		<header></header>
 		
+		<header></header>
 			<div id="map"></div>
-			
+
             <div>
-            	<button id="myLocation" class="mylocation">Ma position</button>
+            	<button id="myLocation" class="mylocation">My position</button>
+            </div>
+
+			<div class="risetimeBox">
+				<h2>When ISS pass above you:</h1>
+				<div id="risetime"></div>
+			</div>
+
+            <div id="stream">
+				<iframe src="https://www.youtube.com/embed/4993sBLAzGA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 			</div>
 			
-			<div class="risetimeBox">
-			<h2>When ISS pass above you:</h1>
-			<div id="risetime"></div>
-			</div>
-
-			<div id="stream">
-			<iframe src="https://www.youtube.com/embed/4993sBLAzGA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			</div>
-
 			<div class="présentation">
-<<<<<<< HEAD
 				<h1>Welcome to the ISS's universe</h1>
 				<p>The ISS is a special station placed in low orbit (400km of height).<br> His speed is 28 000 km/h (17 400 mph)<br> and make one rotation around the world in 1.5 hours.<br>
 				The ISS is permanent occupied by minimum 3 astronauts. At this moment,</p>
 				<div id="astro"></div>
 				<p>live in the space station.</p>
-=======
-			<h2>Welcome to the ISS's universe</h2>
-			<p>The ISS is a special station placed in low orbit (400km of height).<br> His speed is 28 000 km/h (17 400 mph)<br> and make one rotation around the world in 1.5 hours.<br>
-			The ISS is permanent occupied by minimum 3 astronaut. At this moment,</p>
-			<div id="astro"></div>
-			<p>live in the space station.</p>
->>>>>>> cc297ef8b56e9ba4b90ccfc6874f78c18adaba1b
 			</div>
 			
 			<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 			<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+			
 			<script src="assets/js/app.js"></script>
 			<script src="assets/js/iss.js"></script>
-
 		</body>
 	</html>

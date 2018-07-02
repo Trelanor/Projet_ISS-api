@@ -3,8 +3,9 @@
 
 var map = L.map('map', {
     center: ['10', '10'],
-    zoom: 3
+    zoom: 3    
 });
+
 
 function convertRad(input){
     return (Math.PI * input)/180;
@@ -32,8 +33,9 @@ function Risetime(coords) {
             var date = new Date(element['risetime']*1000);
             
             $("#risetime").append('<li>'+ date.toString() +'</li>');
+
         })
-    }    
+    } 
 }
 
 $(function() {
@@ -83,7 +85,7 @@ function distance(coords){
 
 function itineraire(latitude, longitude, lat_b_degre, lon_b_degre){
         
-    R = 6378 //Rayon de la terre en mètre
+    R = 6378 //Rayon de la terre en km
 
     lat_a = convertRad(latitude);
     lon_a = convertRad(longitude);
@@ -92,5 +94,8 @@ function itineraire(latitude, longitude, lat_b_degre, lon_b_degre){
     
     d = R * (Math.PI/2 - Math.asin( Math.sin(lat_b) * Math.sin(lat_a) + Math.cos(lon_b - lon_a) * Math.cos(lat_b) * Math.cos(lat_a)))
     // return d;
+    
+    d = Math.sqrt((d * d)+(400 * 400));
+    
     alert(d)
 }
