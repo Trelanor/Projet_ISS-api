@@ -32,29 +32,32 @@ function functionPosition(jsonObj) {
 
     var lastPositionISS = L.marker([jsonObj['latitude'],jsonObj['longitude']],{icon: lastPosition}).addTo(map);
 
-    var positionISS = L.marker([jsonObj['latitude'],jsonObj['longitude']],{icon: ISSicon}, {draggable: true}).addTo(map);
-    positionISS.bindPopup("ISS Position :<br> Latitude : " + jsonObj['latitude'] + ',<br>Longitude ' + jsonObj['longitude']).openPopup();
     
-    var LatISS = positionISS['_latlng']['lat'];
-    var LngISS = positionISS['_latlng']['lng'];
+    var LatISS = jsonObj['latitude'];
+    var LngISS = jsonObj['longitude'];
+    
 
-
+    
     setTimeout(function(){ 
         map.removeLayer(positionISS);
     }, 5000);
     
-    if (issHistory.length > 1) {
-        var lastPos = issHistory[(issHistory.length - 2)];
-        var lastLatISS = lastPos[0];
-        var lastLngISS = lastPos[1];
-
-
-        itineraireVitesse(lastLatISS, lastLngISS, LatISS, LngISS);
-    }  
-    // 
-
-    // console.warn(lastLatISS);
     
+    if (issHistory.length > 1) {
+            var lastPos = issHistory[(issHistory.length - 2)];
+            var lastLatISS = lastPos[0];
+            var lastLngISS = lastPos[1];
+
+
+            itineraireVitesse(lastLatISS, lastLngISS, LatISS, LngISS);
+            
+            var vitesse = d/5*3600;
+
+            var positionISS = L.marker([jsonObj['latitude'],jsonObj['longitude']],{icon: ISSicon}, {draggable: true}).addTo(map);
+            positionISS.bindPopup("ISS Position :<br> Latitude : " + jsonObj['latitude'] + ',<br>Longitude ' + jsonObj['longitude']+ '<br>Speed of ISS : '+ vitesse).openPopup();
+        
+        
+    }  
 
 }
     
@@ -101,9 +104,10 @@ function itineraireVitesse(lastLatISS, lastLngISS, LatISS, LngISS){
     lon_b = convertRad(LngISS);
     
     d = R * (Math.PI/2 - Math.asin( Math.sin(lat_b) * Math.sin(lat_a) + Math.cos(lon_b - lon_a) * Math.cos(lat_b) * Math.cos(lat_a)))
+
+
     
-    vitesse = d/5 * 3600;
     
-    console.log(vitesse)
+    
 }
 
