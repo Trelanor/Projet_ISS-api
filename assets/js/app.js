@@ -53,8 +53,6 @@ var CanUseOnlyOneTime = once(function Risetime(coords) {
     }
 );
 
-console.log('Fired!');
-
 var CanUseOnlyOneTime_Second = once(function distance(coords){
     var requestURL = 'http://api.open-notify.org/iss-now.json';
     var request = new XMLHttpRequest();
@@ -86,8 +84,6 @@ function itineraire(latitude, longitude, lat_b_degre, lon_b_degre){
     lon_b = convertRad(lon_b_degre);
     
     d = R * (Math.PI/2 - Math.asin( Math.sin(lat_b) * Math.sin(lat_a) + Math.cos(lon_b - lon_a) * Math.cos(lat_b) * Math.cos(lat_a)))
-    // return d;
-    // alert(d)
     $("#risetime").append('<p>'+'The distance between you and the ISS = ' + d + ' kms</p>');
 }
 
