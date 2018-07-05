@@ -1,6 +1,7 @@
 var issHistory = [];
 var positionISS = null;
 
+//ISS's informations
 function getValue(){
     var requestURL = 'http://api.open-notify.org/iss-now.json';
     var request = new XMLHttpRequest();
@@ -58,7 +59,8 @@ function getValue(){
             positionISS = L.marker([jsonObj['latitude'],jsonObj['longitude']],{icon: ISSicon}, {draggable: true}).addTo(map);
             positionISS.bindPopup("ISS Position :<br> Latitude : " + jsonObj['latitude'] + ',<br>Longitude ' + jsonObj['longitude']).openPopup();
         }
-
+        
+        //map center ISS
         var markerBounds = L.latLngBounds([ positionISS.getLatLng()]);
         map.fitBounds(markerBounds,{maxZoom: 5});
 
