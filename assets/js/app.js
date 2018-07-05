@@ -98,11 +98,6 @@ $(function() {
                 myMarker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
                 myMarker.bindPopup("My position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();                
                 
-                var latLngs = [ marker.getLatLng() ];
-                var markerBounds = L.latLngBounds(latLngs);
-                map.fitBounds(markerBounds, {maxZoom: 5});
-
-                
                 CanUseOnlyOneTime(position.coords); // Launch function RiseTime with just 1 time.
                 CanUseOnlyOneTime_Second(position.coords);
 
