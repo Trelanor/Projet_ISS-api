@@ -67,7 +67,7 @@ function getValue(){
         }
 
         var markerBounds = L.latLngBounds([ positionISS.getLatLng()]);
-        map.fitBounds(markerBounds,{maxZoom: 4});
+        map.fitBounds(markerBounds,{maxZoom: 5});
 
     }
     
