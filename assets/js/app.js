@@ -1,11 +1,10 @@
 
 // definir point de depart ouverture page et choix de carte via leaflet
-
 var map = L.map('map', {
     center: ['10', '10'],
-    zoom: 3    
+    zoom: 3
 });
-
+    
 
 function convertRad(input){
     return (Math.PI * input)/180;
@@ -32,7 +31,7 @@ function once(fn, context) {
     };
 }
 
-
+//Bloque le passage ISS près de nous à 1entrée sur Risetime
 var CanUseOnlyOneTime = once(function Risetime(coords) {
 
         var requestURL = 'api.php?lat='+ coords.latitude +'&lon='+ coords.longitude ;
@@ -53,6 +52,7 @@ var CanUseOnlyOneTime = once(function Risetime(coords) {
     }
 );
 
+//Bloque la position à 1entrée sur le risetime
 var CanUseOnlyOneTime_Second = once(function distance(coords){
     var requestURL = 'http://api.open-notify.org/iss-now.json';
     var request = new XMLHttpRequest();
@@ -74,6 +74,7 @@ var CanUseOnlyOneTime_Second = once(function distance(coords){
     }
 });
 
+//Nbre de kms entre ISS et nous(geoloc)
 function itineraire(latitude, longitude, lat_b_degre, lon_b_degre){
         
     R = 6378 //Rayon de la terre en km
