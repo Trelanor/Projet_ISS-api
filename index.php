@@ -8,6 +8,7 @@
 			<meta http-equiv="X-UA-Compatible" content="ie=edge">
 			<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+			<link rel="icon" href="assets/img/iss.gif" />
 			
 			
 			<title>Projet ISS</title>
@@ -51,7 +52,7 @@
 			</div>
 
 			<footer>
-				<p class="made">made by <a href="https://github.com/cha07">Charlotte THOREMBEY</a>, <a href="https://github.com/Trelanor">Jonathan NICOLAS</a> and <a href="https://github.com/PierreHermey">Pierre HERMEY</a>
+				<p class="made">made by <a target="_blank" href="https://github.com/cha07">Charlotte THOREMBEY</a>, <a target="_blank" href="https://github.com/Trelanor">Jonathan NICOLAS</a> and <a target="_blank" href="https://github.com/PierreHermey">Pierre HERMEY</a>
 			</footer>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 			<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

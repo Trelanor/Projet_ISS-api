@@ -40,7 +40,6 @@ function getValue(){
         var LngISS = jsonObj['longitude'];
         
 
-        
         if (issHistory.length > 1) {
                 var lastPos = issHistory[(issHistory.length - 2)];
                 var lastLatISS = lastPos[0];
@@ -69,7 +68,7 @@ function getValue(){
 }
 
 
-
+//Astronautes présents dans ISS
 function astro() {
     var requestURL = 'http://api.open-notify.org/astros.json';
     var request = new XMLHttpRequest();
@@ -89,13 +88,12 @@ function astro() {
 }
 
 
-
     //data['people'].forEach(function functionAstro(jsonObj) {
     //        
     //    }  ) 
 
 
-
+//Vitesse ISS toutes les 5s
 function itineraireVitesse(lastLatISS, lastLngISS, LatISS, LngISS){
 
     R = 6378 //Rayon de la terre en km

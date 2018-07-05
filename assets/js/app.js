@@ -20,6 +20,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/trelanor/cjivfv7xf4txn2qs4t8kaj9nb
 
 var myMarker = null;
 
+// Function Once who allow an other function to be used only one time (Without refresh)
 function once(fn, context) { 
 	var result;
 
@@ -33,7 +34,7 @@ function once(fn, context) {
     };
 }
 
-//Bloque le passage ISS près de nous à 1entrée sur Risetime
+//Pass time of ISS in function of client location, used with ONCE Function to avoid spam
 var CanUseOnlyOneTime = once(function Risetime(coords) {
 
         var requestURL = 'api.php?lat='+ coords.latitude +'&lon='+ coords.longitude ;
@@ -54,7 +55,7 @@ var CanUseOnlyOneTime = once(function Risetime(coords) {
     }
 );
 
-//Bloque la position à 1entrée sur le risetime
+//Distance between ISS and Client location, used with ONCE Function to avoid spam too
 var CanUseOnlyOneTime_Second = once(function distance(coords){
     var requestURL = 'http://api.open-notify.org/iss-now.json';
     var request = new XMLHttpRequest();
@@ -72,11 +73,10 @@ var CanUseOnlyOneTime_Second = once(function distance(coords){
         if (myMarker != null) {
             itineraire(myMarker._latlng.lat, myMarker._latlng.lng, lat_b_degre, lon_b_degre);
         }
-         
     }
 });
 
-//Nbre de kms entre ISS et nous(geoloc)
+//Calcul of the distance between ISS and Client Location
 function itineraire(latitude, longitude, lat_b_degre, lon_b_degre){
         
     R = 6378 //Rayon de la terre en km
@@ -89,7 +89,7 @@ function itineraire(latitude, longitude, lat_b_degre, lon_b_degre){
     d = R * (Math.PI/2 - Math.asin( Math.sin(lat_b) * Math.sin(lat_a) + Math.cos(lon_b - lon_a) * Math.cos(lat_b) * Math.cos(lat_a)))
     $("#risetime").append('<p>'+'The distance between you and the ISS = ' + d.toFixed(2) + ' kms</p>');
 }
-
+//geoLocation of the client 
 $(function() {
     $('#myLocation').click(function () {
         if (navigator.geolocation) {
