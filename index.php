@@ -50,6 +50,10 @@
 				</div>
 
 			</div>
+
+			<footer>
+				<p class="made">made by <a href="https://github.com/cha07">Charlotte THOREMBEY</a>, <a href="https://github.com/Trelanor">Jonathan NICOLAS</a> and <a href="https://github.com/PierreHermey">Pierre HERMEY</a>
+			</footer>
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 			<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 			<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
