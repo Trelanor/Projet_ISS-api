@@ -51,7 +51,7 @@ function getValue(){
                 var lastPos = issHistory[(issHistory.length - 2)];
                 var lastLatISS = lastPos[0];
                 var lastLngISS = lastPos[1];
-
+                
 
                 itineraireVitesse(lastLatISS, lastLngISS, LatISS, LngISS);
                 
@@ -65,6 +65,9 @@ function getValue(){
             positionISS = L.marker([jsonObj['latitude'],jsonObj['longitude']],{icon: ISSicon}, {draggable: true}).addTo(map);
             positionISS.bindPopup("ISS Position :<br> Latitude : " + jsonObj['latitude'] + ',<br>Longitude ' + jsonObj['longitude']).openPopup();
         }
+
+        var markerBounds = L.latLngBounds([ positionISS.getLatLng()]);
+        map.fitBounds(markerBounds,{maxZoom: 4});
 
     }
     

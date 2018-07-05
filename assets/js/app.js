@@ -2,7 +2,7 @@
 // definir point de depart ouverture page et choix de carte via leaflet
 var map = L.map('map', {
     center: ['10', '10'],
-    zoom: 3
+    zoom: 3 
 });
     
 
@@ -15,6 +15,8 @@ L.tileLayer('https://api.mapbox.com/styles/v1/trelanor/cjivfv7xf4txn2qs4t8kaj9nb
     maxZoom: 18,
     minZoom: 2,
 }).addTo(map);
+
+// map.locate({setView: true, maxZoom: 8});
 
 var myMarker = null;
 
@@ -70,7 +72,7 @@ var CanUseOnlyOneTime_Second = once(function distance(coords){
         if (myMarker != null) {
             itineraire(myMarker._latlng.lat, myMarker._latlng.lng, lat_b_degre, lon_b_degre);
         }
-        
+         
     }
 });
 
@@ -97,6 +99,9 @@ $(function() {
                 myMarker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
                 myMarker.bindPopup("My position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();                
                 
+                var latLngs = [ marker.getLatLng() ];
+                var markerBounds = L.latLngBounds(latLngs);
+                map.fitBounds(markerBounds, {maxZoom: 5});
 
                 
                 CanUseOnlyOneTime(position.coords); // Launch function RiseTime with just 1 time.
