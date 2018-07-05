@@ -32,12 +32,12 @@
 				</div>
 				<div class="col-lg-4 col-md-12">
 					<div id="stream">
-						<iframe src="https://www.youtube.com/embed/4993sBLAzGA?autoplay=1" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+						<iframe src="https://www.youtube.com/embed/4993sBLAzGA" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
 					</div>
 					
 					<div class="présentation">
 						<h1>Welcome to the ISS's universe</h1>
-						<p>The ISS is a spacial station placed in low orbit (400km of height).<br> His speed is 28 000 km/h (17 400 mph)<br> and make one rotation around the world in 1.5 hours.<br>
+						<p>The ISS is a space station placed in low orbit (400km of height).<br> His speed is 28 000 km/h (17 400 mph)<br> and make one rotation around the world in 1.5 hours.<br>
 						The ISS is permanent occupied by minimum 3 astronauts. At this moment,</p>
 						<div id="astro"></div>
 						<p>live in the space station.</p>

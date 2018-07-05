@@ -56,7 +56,8 @@ function functionPosition(jsonObj) {
             var positionISS = L.marker([jsonObj['latitude'],jsonObj['longitude']],{icon: ISSicon}, {draggable: true}).addTo(map);
             positionISS.bindPopup("ISS Position :<br> Latitude : " + jsonObj['latitude'] + ',<br>Longitude ' + jsonObj['longitude']+ '<br>Speed of ISS : '+ vitesse.toFixed(2)).openPopup();
         
-        
+            var markerBounds = L.latLngBounds([ positionISS.getLatLng()]);
+            map.fitBounds(markerBounds,{maxZoom: 4});
     }  
 
 }

@@ -3,7 +3,7 @@
 
 var map = L.map('map', {
     center: ['10', '10'],
-    zoom: 3    
+    zoom: 3 
 });
 
 
@@ -16,6 +16,8 @@ L.tileLayer('https://api.mapbox.com/styles/v1/trelanor/cjivfv7xf4txn2qs4t8kaj9nb
     maxZoom: 18,
     minZoom: 2,
 }).addTo(map);
+
+// map.locate({setView: true, maxZoom: 8});
 
 var myMarker = null;
 
@@ -67,10 +69,18 @@ var CanUseOnlyOneTime_Second = once(function distance(coords){
         var lat_b_degre = ISS_Position['latitude'];
         var lon_b_degre = ISS_Position['longitude'];
 
+        // map.panTo();
+
+        // map.panTo(new L.LatLng(lat_b_degre, lon_b_degre),5);
+
+        var latLngs = [ lat_b_degre, lon_b_degre ];
+        var markerBounds = L.latLngBounds(latLngs);
+        map.fitBounds(markerBounds);
+
         if (myMarker != null) {
             itineraire(myMarker._latlng.lat, myMarker._latlng.lng, lat_b_degre, lon_b_degre);
         }
-        
+         
     }
 });
 
