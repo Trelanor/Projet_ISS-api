@@ -69,14 +69,6 @@ var CanUseOnlyOneTime_Second = once(function distance(coords){
         var lat_b_degre = ISS_Position['latitude'];
         var lon_b_degre = ISS_Position['longitude'];
 
-        // map.panTo();
-
-        // map.panTo(new L.LatLng(lat_b_degre, lon_b_degre),5);
-
-        var latLngs = [ lat_b_degre, lon_b_degre ];
-        var markerBounds = L.latLngBounds(latLngs);
-        map.fitBounds(markerBounds);
-
         if (myMarker != null) {
             itineraire(myMarker._latlng.lat, myMarker._latlng.lng, lat_b_degre, lon_b_degre);
         }
@@ -106,6 +98,9 @@ $(function() {
                 myMarker = L.marker([position.coords.latitude, position.coords.longitude]).addTo(map);
                 myMarker.bindPopup("My position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();                
                 
+                var latLngs = [ marker.getLatLng() ];
+                var markerBounds = L.latLngBounds(latLngs);
+                map.fitBounds(markerBounds, {maxZoom: 5});
 
                 
                 CanUseOnlyOneTime(position.coords); // Launch function RiseTime with just 1 time.
