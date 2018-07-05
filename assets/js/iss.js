@@ -111,4 +111,3 @@ function itineraireVitesse(lastLatISS, lastLngISS, LatISS, LngISS){
     
     
 }
-
