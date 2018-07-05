@@ -32,12 +32,12 @@
 				</div>
 				<div class="col-lg-4 col-md-12">
 					<div id="stream">
-						<iframe src="https://www.youtube.com/embed/4993sBLAzGA " frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+						<iframe src="https://www.youtube.com/embed/4993sBLAzGA?autoplay=1" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
 					</div>
 					
 					<div class="présentation">
 						<h1>Welcome to the ISS's universe</h1>
-						<p>The ISS is a spacial station placed in low orbit (400km of height).<br> His speed is 28 000 km/h (17 400 mph)<br> and make one rotation around the world in 1.5 hours.<br>
+						<p>The ISS is a space station placed in low orbit (400km of height).<br> His speed is 28 000 km/h (17 400 mph)<br> and make one rotation around the world in 1.5 hours.<br>
 						The ISS is permanent occupied by minimum 3 astronauts. At this moment,</p>
 						<div id="astro"></div>
 						<p>live in the space station.</p>
@@ -50,6 +50,10 @@
 
 			</div>
 
+			<footer>
+				<p class="made">made by <a href="https://github.com/cha07">Charlotte THOREMBEY</a>, <a href="https://github.com/Trelanor">Jonathan NICOLAS</a> and <a href="https://github.com/PierreHermey">Pierre HERMEY</a>
+			</footer>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 			<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 			<script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
 			
