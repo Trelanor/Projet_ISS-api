@@ -39,7 +39,7 @@ function getValue(){
         var LatISS = jsonObj['latitude'];
         var LngISS = jsonObj['longitude'];
         
-        
+
         if (issHistory.length > 1) {
                 var lastPos = issHistory[(issHistory.length - 2)];
                 var lastLatISS = lastPos[0];

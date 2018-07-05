@@ -112,13 +112,12 @@ footer{
     }
 
     .présentation{
-        background: #ffffff;
-        opacity: 0.6;
+        display: none;
     }
 
     p{
-        font-size: 0.6rem;
-        color: black;
+        font-size: 0.7rem;
+        color: white;
     }
 
     h1{
@@ -140,9 +139,14 @@ footer{
 
     .risetimeBox{
         font-size: 0.6rem;
+        width: 100%;
     }
 
     h2{
         font-size: 0.8rem;
+    }
+
+    footer{
+        display: none;
     }
 }
