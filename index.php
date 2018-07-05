@@ -32,7 +32,7 @@
 				</div>
 				<div class="col-lg-4 col-md-12">
 					<div id="stream">
-						<iframe src="https://www.youtube.com/embed/4993sBLAzGA " frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+						<iframe src="https://www.youtube.com/embed/4993sBLAzGA?autoplay=1" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
 					</div>
 					
 					<div class="présentation">

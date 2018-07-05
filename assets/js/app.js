@@ -84,7 +84,7 @@ function itineraire(latitude, longitude, lat_b_degre, lon_b_degre){
     lon_b = convertRad(lon_b_degre);
     
     d = R * (Math.PI/2 - Math.asin( Math.sin(lat_b) * Math.sin(lat_a) + Math.cos(lon_b - lon_a) * Math.cos(lat_b) * Math.cos(lat_a)))
-    $("#risetime").append('<p>'+'The distance between you and the ISS = ' + d + ' kms</p>');
+    $("#risetime").append('<p>'+'The distance between you and the ISS = ' + d.toFixed(2) + ' kms</p>');
 }
 
 $(function() {
