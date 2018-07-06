@@ -1,6 +1,8 @@
 var issHistory = [];
 var positionISS = null;
 
+// function who retrieve information of ISS and make Markers !
+
 function getValue(){
     var requestURL = 'http://api.open-notify.org/iss-now.json';
     var request = new XMLHttpRequest();
@@ -68,7 +70,7 @@ function getValue(){
 }
 
 
-//Astronautes présents dans ISS
+//Astronaut in the ISS at this moment.
 function astro() {
     var requestURL = 'http://api.open-notify.org/astros.json';
     var request = new XMLHttpRequest();
@@ -93,7 +95,7 @@ function astro() {
     //    }  ) 
 
 
-//Vitesse ISS toutes les 5s
+//Speed of ISS every 5 seconds
 function itineraireVitesse(lastLatISS, lastLngISS, LatISS, LngISS){
 
     R = 6378 //Rayon de la terre en km
