@@ -1,5 +1,71 @@
+//                  /\
+//                  ||
+//                 ====
+//                 |  |
+//                 |  |
+//                 ====
+//                 XXXX
+//                 |\/|
+//                 |/\|
+//                 |\/|
+//                 |/\|
+//                 |\/|
+//                 |/\|
+//                /____\
+//                |    |
+//                |    |
+//               /      \
+//              /        \
+//             /          \
+//            /            \
+//           /              \
+//           ----------------
+//           |--------------|
+//           |              |
+//           |              |
+//           |     _____    |
+//           |       |      |
+//           |     __|__    |      
+//           |     ____     |
+//           |     |___     |
+//           |     ____|    |
+//           |     ____     |
+//           |     |___     |
+//           |     ____|    |
+//           |              |
+//           |              |
+//           |              |
+//           |              |
+//           |              |
+//           |              |
+//           |              |
+//           |              |
+//           |              |
+//           |              |
+//           |              |
+//           |              |
+//           |              |
+//           |              |
+//           |              |
+//           |              |
+//           |              |
+//           |              |
+//           |      __      |
+//          /|      ||      |\
+//         / |      ||      | \
+//        /  |      ||      |  \
+//       /   |      ||      |   \
+//  -----    |      HH      |    -----
+//  |   |    |      HH      |    |   |
+//  |   |    |      HH      |    |   |
+//  |   |    |      HH      |    |   |
+//  |   |    |______HH______|    |   |
+//  --------/       HH       \--------
 
-//Define starting point on Leaflet map
+
+
+
+// define starting point when opening the page and choosing a map via leaflet
 var map = L.map('map', {
     center: ['10', '10'],
     zoom: 3 
@@ -10,7 +76,6 @@ function convertRad(input){
     return (Math.PI * input)/180;
 };
 
-//Layer MapBox
 L.tileLayer('https://api.mapbox.com/styles/v1/trelanor/cjivfv7xf4txn2qs4t8kaj9nb/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidHJlbGFub3IiLCJhIjoiY2ppdmVkd3QwMWFraTNxbXZleWV0ejF6cyJ9.RrESCs90t5bLD25_aI-DWA', {
     attribution: '&copy; <a href="https://www.mapbox.com/copyright">Mapbox</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
     maxZoom: 18,
@@ -101,7 +166,7 @@ $(function() {
                 myMarker.bindPopup("My position :<br> Latitude : " + position.coords.latitude + ',<br>Longitude ' + position.coords.longitude).openPopup();                
                 
                 CanUseOnlyOneTime(position.coords); // Launch function RiseTime with just 1 time.
-                CanUseOnlyOneTime_Second(position.coords); //Same but for an other function
+                CanUseOnlyOneTime_Second(position.coords);
 
             }, 
             function(error) {
