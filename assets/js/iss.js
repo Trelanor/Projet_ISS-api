@@ -86,7 +86,7 @@ function getValue(){
         // map.removeLayer(positionISS);
         var ISSicon = L.icon({
             iconUrl: 'assets/img/ISS-sm.png',
-            iconSize:     [40, 40], // size of the icon
+            iconSize:     [60, 60], // size of the icon
             popupAnchor:  [-3, -26] // point from which the popup should open relative to the iconAnchor
         });
 
@@ -129,7 +129,7 @@ function getValue(){
         
         //map center ISS
         var markerBounds = L.latLngBounds([ positionISS.getLatLng()]);
-        map.fitBounds(markerBounds,{maxZoom: 5});
+        map.fitBounds(markerBounds,{maxZoom: 3});
 
     }
     

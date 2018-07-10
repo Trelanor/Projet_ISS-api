@@ -1,69 +1,4 @@
-                        //                  /\
-                        //                  ||
-                        //                 ====
-                        //                 |  |
-                        //                 |  |
-                        //                 ====
-                        //                 XXXX
-                        //                 |\/|
-                        //                 |/\|
-                        //                 |\/|
-                        //                 |/\|
-                        //                 |\/|
-                        //                 |/\|
-                        //                /____\
-                        //                |    |
-                        //                |    |
-                        //               /      \
-                        //              /        \
-                        //             /          \
-                        //            /            \
-                        //           /              \
-                        //           ----------------
-                        //           |--------------|
-                        //           |              |
-                        //           |              |
-                        //           |     _____    |
-                        //           |       |      |
-                        //           |     __|__    |      
-                        //           |     ____     |
-                        //           |     |___     |
-                        //           |     ____|    |
-                        //           |     ____     |
-                        //           |     |___     |
-                        //           |     ____|    |
-                        //           |              |
-                        //           |              |
-                        //           |              |
-                        //           |              |
-                        //           |              |
-                        //           |              |
-                        //           |              |
-                        //           |              |
-                        //           |              |
-                        //           |              |
-                        //           |              |
-                        //           |              |
-                        //           |              |
-                        //           |              |
-                        //           |              |
-                        //           |              |
-                        //           |              |
-                        //           |              |
-                        //           |      __      |
-                        //          /|      ||      |\
-                        //         / |      ||      | \
-                        //        /  |      ||      |  \
-                        //       /   |      ||      |   \
-                        //  -----    |      HH      |    -----
-                        //  |   |    |      HH      |    |   |
-                        //  |   |    |      HH      |    |   |
-                        //  |   |    |      HH      |    |   |
-                        //  |   |    |______HH______|    |   |
-                        //  --------/       HH       \--------
-
-
-
+                      
 
 // define starting point when opening the page and choosing a map via leaflet
 var map = L.map('map', {
@@ -114,6 +49,8 @@ var CanUseOnlyOneTime = once(function Risetime(coords) {
             $("#risetime").append('<h2>When ISS pass above you :</h2>');   
             $.each(request.response.response, function(key, element) {
                 var date = new Date(element['risetime']*1000);
+                
+                $(".risetimeBox").css("background-color", "rgba(255, 255, 255, 0.267)");
                 
                 $("#risetime").append('<li>'+ date.toString() +'</li>');
             })
