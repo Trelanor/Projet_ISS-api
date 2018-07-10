@@ -116,6 +116,69 @@ function geoLoc() {
 
 
 
+                        //                  /\
+                        //                  ||
+                        //                 ====
+                        //                 |  |
+                        //                 |  |
+                        //                 ====
+                        //                 XXXX
+                        //                 |\/|
+                        //                 |/\|
+                        //                 |\/|
+                        //                 |/\|
+                        //                 |\/|
+                        //                 |/\|
+                        //                /____\
+                        //                |    |
+                        //                |    |
+                        //               /      \
+                        //              /        \
+                        //             /          \
+                        //            /            \
+                        //           /              \
+                        //           ----------------
+                        //           |--------------|
+                        //           |              |
+                        //           |              |
+                        //           |     _____    |
+                        //           |       |      |
+                        //           |     __|__    |      
+                        //           |     ____     |
+                        //           |     |___     |
+                        //           |     ____|    |
+                        //           |     ____     |
+                        //           |     |___     |
+                        //           |     ____|    |
+                        //           |              |
+                        //           |              |
+                        //           |              |
+                        //           |              |
+                        //           |              |
+                        //           |              |
+                        //           |              |
+                        //           |              |
+                        //           |              |
+                        //           |              |
+                        //           |              |
+                        //           |              |
+                        //           |              |
+                        //           |              |
+                        //           |              |
+                        //           |              |
+                        //           |              |
+                        //           |              |
+                        //           |      __      |
+                        //          /|      ||      |\
+                        //         / |      ||      | \
+                        //        /  |      ||      |  \
+                        //       /   |      ||      |   \
+                        //  -----    |      HH      |    -----
+                        //  |   |    |      HH      |    |   |
+                        //  |   |    |      HH      |    |   |
+                        //  |   |    |      HH      |    |   |
+                        //  |   |    |______HH______|    |   |
+                        //  --------/       HH       \--------
 
 
 
@@ -140,7 +203,7 @@ function getValue(){
         // map.removeLayer(positionISS);
         var ISSicon = L.icon({
             iconUrl: 'assets/img/ISS-sm.png',
-            iconSize:     [40, 40], // size of the icon
+            iconSize:     [60, 60], // size of the icon
             popupAnchor:  [-3, -26] // point from which the popup should open relative to the iconAnchor
         });
     
@@ -181,18 +244,11 @@ function getValue(){
             positionISS.bindPopup("ISS Position :<br> Latitude : " + jsonObj['latitude'] + ',<br>Longitude ' + jsonObj['longitude']).openPopup();
         }
 
-
-        if (geoLoc() !== null){
-
-        }else{
             //map center ISS
         var markerBounds = L.latLngBounds([ positionISS.getLatLng()]);
-        map.fitBounds(markerBounds,{maxZoom: 5});
-        }
-    
+        map.fitBounds(markerBounds,{maxZoom: 3});
+
     }
-    
-    
 }
 
 
@@ -249,4 +305,4 @@ jQuery(document).ready(function(){
     setInterval(function(){
         astro();
     },(1000 * 60 * 10));
-});
+})
