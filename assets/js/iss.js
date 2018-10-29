@@ -92,7 +92,7 @@ function itineraire(latitude, longitude, lat_b_degre, lon_b_degre){
 }
 //geoLocation of the client 
 function geoLoc() {
-    $('#myLocation').click(function () {
+    $('#myLocation').click(function() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
             function geoPos(position) {
@@ -106,14 +106,15 @@ function geoLoc() {
             }, 
             function(error) {
                 console.log(error);
-            }, {timeout:5000});
+                }, 
+            );
         } else {
             alert("La géolocalisation n'est pas supportée par ce navigateur.");
         }
     })
     
 }
-
+geoLoc();
 
 
                         //                  /\
@@ -297,6 +298,7 @@ function itineraireVitesse(lastLatISS, lastLngISS, LatISS, LngISS){
 jQuery(document).ready(function(){
     getValue();
     astro();
+    geoLoc();
 
     setInterval(function(){
         getValue();
